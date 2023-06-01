@@ -42,7 +42,14 @@ export const navigation = [
   },
 ]
 
-export default function CommunityPage () { } // so that builds don't error
+// so that builds don't error
+export default function CommunityPage () {
+  return (
+    <div>
+      You shouldn't be here.
+    </div>
+  );
+}
 
 export const getServerSideProps = async context => {
   return { redirect: { destination: "/", permanent: true } };
