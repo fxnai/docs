@@ -15,10 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: "fxnai/docs-ai"
+          repository: fxnai/docs-ai
+          ref: production
           token: ${{ secrets.FXN_BOT_PAT }}
-          ref: "production"
-          submodules: true
+          fetch-depth: 0
+          submodules: recursive
 
       - name: Update Docs
         run: git submodule update --remote
