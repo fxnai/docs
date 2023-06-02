@@ -1,0 +1,15 @@
+name: Deploy on Vercel
+
+on:
+  push:
+    branches:
+      - staging
+    
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 
+      name: staging
+      url: https://staging.docs.fxn.ai
+    steps:
+      - name: deploy
