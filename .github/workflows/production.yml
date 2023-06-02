@@ -15,9 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: "fxnai/docs-ai"
+          repository: fxnai/docs-ai
           token: ${{ secrets.FXN_BOT_PAT }}
-          ref: "production"
+          ref: production
           submodules: true
 
       - name: Update Docs
