@@ -30,16 +30,6 @@ export const navigation = [
       { title: "Changelog", href: "/api/changelog" },
     ]
   },
-  {
-    title: "C API Reference",
-    links: [
-      { title: "Introduction", href: "/c" },
-      { title: "FXNModel", href: "/c/fxnmodel" },
-      { title: "FXNModelConfiguration", href: "/c/fxnmodelconfiguration" },
-      { title: "FXNFeature", href: "/c/fxnfeature" },
-      { title: "FXNFeatureType", href: "/c/fxnfeaturetype" }
-    ]
-  },
 ]
 
 // so that builds don't error
