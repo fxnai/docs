@@ -13,7 +13,7 @@ Our documentation is written to achieve very specific goals. In descending order
 
 3. **Highly visual**. What's better than a giant paragraph? An animated GIF. And what's better than an animated GIF? A live, interactive demo.
 
-4. **Single source of truth**. This serves as the single knowledge base for both our customers *and our internal Function team*. We want to keep almost no internal documentation on the Function platform, separate from these docs.
+4. **Single source of truth**. This serves as the single knowledge base for both our customers *and the internal Function team*. We want to keep almost no internal documentation about the Function platform separate from these docs.
 
 5. **Collaborative**. We want to welcome our users' changes and suggestions to our docs. This is a major motivation in using Markdown as our content format, and open-sourcing the docs themselves.
 
