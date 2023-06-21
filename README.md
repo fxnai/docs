@@ -9,7 +9,7 @@ Our documentation is written to achieve very specific goals. In descending order
 
 1. **Reduce time-to-first-dopamine**. We want devs to land on [docs.fxn.ai](https://docs.fxn.ai), and be able to make a prediction within the first 1-2 pages.
 
-2. **Extremely accessible**. A core part of our company's thesis is expanding who we call a "developer". In addition to serving hi-tech data and ML teams, we want to appeal to less technical individuals. This means that we assume that our readers are not as familiar with some of the terms we refer to.
+2. **Extremely accessible**. A core part of our company's thesis is expanding who we call a "developer". In addition to serving hi-tech data and ML teams, we want to appeal to less technical individuals and teams. This means that we assume that our readers are not as familiar with some of the terms we refer to.
 
 3. **Highly visual**. What's better than a giant paragraph? An animated GIF. And what's better than an animated GIF? A live, interactive demo.
 
