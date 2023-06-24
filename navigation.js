@@ -3,7 +3,7 @@ export const navigation = [
     title: "Introduction",
     links: [
       { title: "Welcome to Function", href: "/" },
-      { title: "Installing Function", href: "/intro/install" },
+      { title: "Core Concepts", href: "/intro/concepts" },
     ],
   },
   {
@@ -14,10 +14,11 @@ export const navigation = [
     ]
   },
   {
-    title: "Integrations",
+    title: "Guides",
     links: [
-      { title: "Bringing your own GPU", href: "/integrations/runhouse" },
-      { title: "Creating AI Automations", href: "/integrations/zapier" },
+      { title: "Rendering with Blender", href: "/guides/blender" },
+      { title: "Bringing your own GPU", href: "/guides/runhouse" },
+      { title: "Creating AI-powered Automations", href: "/guides/zapier" },
     ]
   },
   {
