@@ -3,7 +3,7 @@ export const navigation = [
     title: "Introduction",
     links: [
       { title: "Welcome to Function", href: "/" },
-      { title: "Installing Function", href: "/intro/install" },
+      { title: "Core Concepts", href: "/intro/concepts" },
     ],
   },
   {
@@ -14,10 +14,11 @@ export const navigation = [
     ]
   },
   {
-    title: "Integrations",
+    title: "Guides",
     links: [
-      { title: "Bringing your own GPU", href: "/integrations/runhouse" },
-      { title: "Creating AI Automations", href: "/integrations/zapier" },
+      { title: "Rendering with Blender", href: "/guides/blender" },
+      { title: "Bringing your own GPU", href: "/guides/runhouse" },
+      { title: "Creating AI-powered Automations", href: "/guides/zapier" },
     ]
   },
   {
@@ -28,16 +29,6 @@ export const navigation = [
       { title: "Predictions", href: "/api/predictions" },
       { title: "Environment Variables", href: "/api/environment" },
       { title: "Changelog", href: "/api/changelog" },
-    ]
-  },
-  {
-    title: "C API Reference",
-    links: [
-      { title: "Introduction", href: "/c" },
-      { title: "FXNModel", href: "/c/fxnmodel" },
-      { title: "FXNModelConfiguration", href: "/c/fxnmodelconfiguration" },
-      { title: "FXNFeature", href: "/c/fxnfeature" },
-      { title: "FXNFeatureType", href: "/c/fxnfeaturetype" }
     ]
   },
 ]

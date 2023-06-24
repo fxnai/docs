@@ -1,61 +1,87 @@
 ---
-title: Getting started
-pageTitle: NatML - Edge and Cloud Infra for AI-powered Apps.
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
+title: Welcome to Function
+pageTitle: Function Docs
+description: Run AI prediction functions on mobile, web, and in the cloud.
 ---
 
-Thsi is all under construction. {% .lead %}
+Run AI prediction functions on mobile, web, and in the cloud. {% .text-2xl .text-gray-500 .font-normal %}
 
-{% quick-links %}
+Function allows you to run AI prediction functions on mobile, web, and in the cloud with a seamless workflow.
 
-{% quick-link title="Installation" icon="installation" href="/" description="Step-by-step guides to setting up your system and installing the library." /%}
+Bring a Jupyter notebook with a `predict` function, and we'll spin up a serverless AI prediction service that can scale up to serve millions of customers, and scale down to zero when idle.
 
-{% quick-link title="Architecture guide" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
+___
 
-{% quick-link title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
-
-{% quick-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
-
-{% /quick-links %}
-
----
-
-## Make your First Prediction
-INCOMPLETE
+## Installing Function
+Function provides clients for Python, JavaScript, Unity Engine, and the command line interface (CLI):
 
 {% multifence %}
 
-```shell {% framework="python" %}
-pip install natml
+```bash {% framework="python" %}
+# Open a terminal and run the following command:
+pip install fxn
 ```
 
-```shell {% framework="javascript" %}
-npm install natml
+```bash {% framework="javascript" %}
+# Open a terminal and run the following command:
+npm install fxnjs
 ```
 
-```json {% framework="unity" highlight=["2..8", 10] %}
+```json {% framework="unity" highlight=["3..9", 11] %}
+// Add the highlighted lines to your `Packages/manifest.json` file:
 {
   "scopedRegistries": [
     {
-      "name": "NatML",
+      "name": "Function",
       "url": "https://registry.npmjs.com",
-      "scopes": ["ai.natml"]
+      "scopes": ["ai.fxn"]
     }
   ],
   "dependencies": {
-    "ai.natml.natml": "1.1.5"
+    "ai.fxn.fxn3d": "0.0.1"
   }
 }
 ```
+
+```bash {% framework="cli" %}
+# Open a terminal and run the following command:
+pip install fxn
+```
+
 {% /multifence %}
+
+Function also provides a [Discord integration](https://fxn.ai/discord) to make predictions right in your Discord server.
+
+{% callout %} We have iOS (Swift) and Android (Java/Kotlin) integrations coming soon! {% /callout %} 
 
 ---
 
-## Getting help
-INCOMPLETE
+## Making a Prediction
+Let's make your first prediction with the Function CLI (see installation steps above). To start, register at [fxn.ai](https://fxn.ai/login). Once you're logged in, generate an access key:
 
-### Submit an issue
-INCOMPLETE
+![generate access key](https://raw.githubusercontent.com/fxnai/.github/main/access_key.gif)
 
-### Join the community
-INCOMPLETE
+Now, let's login to the Function CLI with your access key:
+```bash
+# Open a terminal and run the following command
+fxn auth login <ACCESS KEY>
+```
+
+You should see information about your Function account:
+
+![login to CLI](https://raw.githubusercontent.com/fxnai/.github/main/auth_login.gif)
+
+Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@natml/stable-diffusion) model which generates an image based on a text prompt:
+
+[GIF here]
+
+___
+
+## Join the Party
+At this point, you've seen what Function is all about. Before getting into the weeds, here are a few useful links:
+
+- **[Join the community](https://fxn.ai/community)**. Come get ideas on how others are thinking of integrating AI into their workflows and products.
+
+- **[Star us on GitHub](https://github.com/fxnai/fxn)**. You can open issues for any bugs and get technical help on our GitHub.
+
+- **[Drop us an email](mailto:hi@fxn.ai)**. Reach out with any questions or thoughts. We'd love to hear them 😁
