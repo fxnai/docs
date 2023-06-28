@@ -52,7 +52,7 @@ pip install fxn
 
 Function also provides a [Discord integration](https://fxn.ai/discord) to make predictions right in your Discord server.
 
-{% callout %} We have iOS (Swift) and Android (Java/Kotlin) integrations coming soon! {% /callout %} 
+{% callout %} We have iOS (Swift) and Android (Java/Kotlin) integrations coming soon! {% /callout %}
 
 ---
 
@@ -73,7 +73,7 @@ You should see information about your Function account:
 
 Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@natml/stable-diffusion) model which generates an image based on a text prompt:
 
-[GIF here]
+![predict](https://raw.githubusercontent.com/fxnai/.github/main/predict.gif)
 
 ___
 
