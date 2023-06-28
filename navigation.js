@@ -7,7 +7,7 @@ export const navigation = [
     ],
   },
   {
-    title: "Predictors",
+    title: "Predictions",
     links: [
       { title: "Exploring Predictors", href: "/predictors/explore" },
       { title: "Creating a Predictor", href: "/predictors/create" },
@@ -16,6 +16,8 @@ export const navigation = [
   {
     title: "Guides",
     links: [
+      { title: "Using Secrets", href: "/guides/secrets" },
+      { title: "Pulling from Private Repos", href: "/guides/repos" },
       { title: "Rendering with Blender", href: "/guides/blender" },
       { title: "Bringing your own GPU", href: "/guides/runhouse" },
       { title: "Creating AI-powered Automations", href: "/guides/zapier" },
@@ -26,8 +28,9 @@ export const navigation = [
     links: [
       { title: "Introduction", href: "/api" },
       { title: "Predictors", href: "/api/predictors" },
-      { title: "Predictions", href: "/api/predictions" },
       { title: "Environment Variables", href: "/api/environment" },
+      { title: "Features", href: "/api/features" },
+      { title: "Predictions", href: "/api/predictions" },
       { title: "Changelog", href: "/api/changelog" },
     ]
   },
