@@ -6,13 +6,15 @@ description: Accessing our API and building clients.
 
 Accessing our API and building clients. {% .text-2xl .text-gray-500 .font-normal %}
 
-Most users will access Function through one of our client libraries. But if we do not yet have a client library for your development environment, Function provides an isomorphic [GraphQL](https://github.com/fxnai/fxnapi/blob/main/schema.graphql) and [REST](https://github.com/fxnai/fxnapi/blob/main/rest.yml) API.
+Most users will access Function through one of our client libraries. But if we do not yet have a client library for your development environment, Function provides an isomorphic GraphQL and REST API.
 
 ## Making Requests
 You can reach the Function APIs at the following URLs:
-- GraphQL: [https://api.fxn.ai/graph](https://api.fxn.ai/graph)
 
-- REST: [https://api.fxn.ai](https://api.fxn.ai)
+{% quick-links %}
+{% quick-link title="GraphQL API" icon="/icon.png" newTab=true href="https://github.com/fxnai/fxnapi/blob/main/schema.graphql" description="https://api.fxn.ai/graph" /%}
+{% quick-link title="REST API" icon="/icon.png" newTab=true href="https://github.com/fxnai/fxnapi/blob/main/rest.yml" description="https://api.fxn.ai" /%}
+{% /quick-links %}
 
 ## Authenticating Requests
 Most requests must be authenticated. Function provides three schemes for authenticating requests:
@@ -63,10 +65,10 @@ If your URL responds with a `200` status, Function will authorize the prediction
 
 {% callout %} Note that you will be charged for the prediction being made. {% /callout %}
 
-On the other hand, your endpoint can respond with a `400` status, along with an optional `message` to be relayed to the user:
+On the other hand, your endpoint can respond with a `400` status or specify an `error` to be relayed to the user:
 ```js
 {
-    "message": "You have not yet paid 😛"
+    "error": "You have not yet paid 😛"
 }
 ```
 
@@ -75,8 +77,8 @@ On the other hand, your endpoint can respond with a `400` status, along with an 
 ## Building a Function Client
 We welcome open-source contributors building their own Function clients. Whether you want to bring Function to a new development environment, or you think you can do a better job on a client than we've done, we welcome you to take a stab at it! Below are a few notes to keep in mind:
 
-- You can make suggestions on our public APIs by simply opening an issue on our [fxnapi](https://github.com/fxnai/fxnapi) repository.
-
-- You can make suggestions and improvements to these docs by opening an issue or a PR on our [docs](https://github.com/fxnai/docs) repository.
-
-- Perhaps most importantly, come talk to us on [our Discord community](https://fxn.ai/community).
+{% quick-links %}
+{% quick-link title="Inspect our APIs" icon="/github.png" newTab=true href="https://github.com/fxnai/fxnapi" description="Learn more about our APIs with the public schemas." /%}
+{% quick-link title="Review our Docs" icon="/github.png" newTab=true href="https://github.com/fxnai/docs" description="Ask questions and suggest improvements to our docs." /%}
+{% quick-link title="Join our Community" icon="/discord.svg" newTab=true href="https://fxn.ai/community" description="Come talk to us on Discord." /%}
+{% /quick-links %}

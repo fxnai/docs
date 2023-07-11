@@ -231,7 +231,7 @@ type Signature {
 }
 ```
 
-{% callout %} For `CLOUD` predictors, the signature `outputs` will always be empty. {% /callout %}
+{% callout %} For `CLOUD` predictors, the signature `outputs` may be empty. {% /callout %}
 
 The `Parameter` type provides rich information about each parameter within the predictor signature:
 ```graphql
