@@ -19,7 +19,7 @@ Function provides clients for Python, JavaScript, Unity Engine, and the command 
 
 ```bash {% framework="python" %}
 # Open a terminal and run the following command:
-pip install fxn
+pip install --upgrade fxn
 ```
 
 ```bash {% framework="javascript" %}
@@ -38,19 +38,24 @@ npm install fxnjs
     }
   ],
   "dependencies": {
-    "ai.fxn.fxn3d": "0.0.1"
+    "ai.fxn.fxn3d": "0.0.2"
   }
 }
 ```
 
 ```bash {% framework="cli" %}
 # Open a terminal and run the following command:
-pip install fxn
+pip install --upgrade fxn
 ```
 
 {% /multifence %}
 
-Function also provides a [Discord integration](https://fxn.ai/discord) to make predictions right in your Discord server.
+Function also provides Discord and Slack bots to make predictions right in your team conversations:
+
+{% quick-links %}
+{% quick-link title="Make Predictions in Discord" icon="/discord.svg" newTab=true href="https://fxn.ai/discord" description="Make predictions in any conversation with the `/predict` slash command." /%}
+{% quick-link title="Make Predictions in Slack" icon="/slack2.png" newTab=true href="https://api.fxn.ai/slack/install" description="Make predictions in any conversation with the `/predict` slash command." /%}
+{% /quick-links %}
 
 {% callout %} We have iOS (Swift) and Android (Java/Kotlin) integrations coming soon! {% /callout %}
 
@@ -71,7 +76,11 @@ You should see information about your Function account:
 
 ![login to CLI](https://raw.githubusercontent.com/fxnai/.github/main/auth_login.gif)
 
-Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@natml/stable-diffusion) model which generates an image based on a text prompt:
+Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samplefxn/stable-diffusion) model which generates an image based on a text prompt. Run the following command:
+```bash
+# Generate an image from a text prompt using Stable Diffusion
+fxn predict @samplefxn/stable-diffusion --prompt "An astronaut riding a horse on mars"
+```
 
 ![predict](https://raw.githubusercontent.com/fxnai/.github/main/predict.gif)
 
@@ -80,8 +89,7 @@ ___
 ## Join the Party
 At this point, you've seen what Function is all about. Before getting into the weeds, here are a few useful links:
 
-- **[Join the community](https://fxn.ai/community)**. Come get ideas on how others are thinking of integrating AI into their workflows and products.
-
-- **[Star us on GitHub](https://github.com/fxnai/fxn)**. You can open issues for any bugs and get technical help on our GitHub.
-
-- **[Drop us an email](mailto:hi@fxn.ai)**. Reach out with any questions or thoughts. We'd love to hear them 😁
+{% quick-links %}
+{% quick-link title="Join the Community" icon="/discord.svg" newTab=true href="https://fxn.ai/community" description="Come get ideas on how others are thinking of integrating AI into their workflows and products." /%}
+{% quick-link title="Star us on GitHub" icon="/github.png" newTab=true href="https://github.com/fxnai/fxn" description="You can open issues for any bugs and get technical help on our GitHub." /%}
+{% /quick-links %}
