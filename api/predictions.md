@@ -198,7 +198,7 @@ mutation ($input: CreatePredictionInput!) {
 
 ```json {% framework="rest" %}
 // POST: https://api.fxn.ai/predict/@fxn/greeting
-// Header: `function-client: macos`
+// Header: `fxn-client: macos`
 {
     "name": "Yusuf"
 }

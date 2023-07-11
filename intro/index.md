@@ -62,21 +62,7 @@ Function also provides Discord and Slack bots to make predictions right in your 
 ---
 
 ## Making a Prediction
-Let's make your first prediction with the Function CLI (see installation steps above). To start, register at [fxn.ai](https://fxn.ai/login). Once you're logged in, generate an access key:
-
-![generate access key](https://raw.githubusercontent.com/fxnai/.github/main/access_key.gif)
-
-Now, let's login to the Function CLI with your access key:
-```bash
-# Open a terminal and run the following command
-fxn auth login <ACCESS KEY>
-```
-
-You should see information about your Function account:
-
-![login to CLI](https://raw.githubusercontent.com/fxnai/.github/main/auth_login.gif)
-
-Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samplefxn/stable-diffusion) model which generates an image based on a text prompt. Run the following command:
+Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samplefxn/stable-diffusion) model which generates an image based on a text prompt. Make sure you have installed the Function CLI. Then open a terminal and run the following command:
 ```bash
 # Generate an image from a text prompt using Stable Diffusion
 fxn predict @samplefxn/stable-diffusion --prompt "An astronaut riding a horse on mars"

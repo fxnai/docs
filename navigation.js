@@ -7,15 +7,23 @@ export const navigation = [
     ],
   },
   {
-    title: "Guides",
+    title: "Making Predictions",
     links: [
-      { title: "Making Predictions", href: "/guides/predictions" },
-      { title: "Creating Predictors", href: "/guides/create" },
-      { title: "Using Secrets", href: "/guides/secrets" },
-      { title: "Pulling from Private Repos", href: "/guides/repos" },
-      { title: "Rendering with Blender", href: "/guides/blender" },
-      //{ title: "Bringing your own GPU", href: "/guides/runhouse" },
-      { title: "Creating Zapier Automations", href: "/guides/zapier" },
+      { title: "From Code", href: "/predict" },
+      { title: "From Discord", href: "/predict/discord" },
+      { title: "From Slack", href: "/predict/slack" },
+      { title: "From Reddit", href: "/predict/reddit" },
+      { title: "From Zapier", href: "/predict/zapier" },
+    ]
+  },
+  {
+    title: "Creating Predictors",
+    links: [
+      { title: "Creating Predictors", href: "/create" },
+      { title: "Using Secrets", href: "/create/secrets" },
+      { title: "Pulling from Private Repos", href: "/create/repos" },
+      { title: "Rendering with Blender", href: "/create/blender" },
+      //{ title: "Bringing your own GPU", href: "/create/runhouse" },
     ]
   },
   {

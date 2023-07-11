@@ -1,151 +1,164 @@
 ---
-title: Features
-pageTitle: Features - Function
-description: Sending and receiving data from predictors.
+title: Values
+pageTitle: Values - Function
+description: Sending and receiving data to and from predictors.
 ---
 
-Sending and receiving data from predictors. {% .text-2xl .text-gray-500 .font-normal %}
+Sending and receiving data to and from predictors. {% .text-2xl .text-gray-500 .font-normal %}
 
 ```graphql
 """
-Prediction feature.
+Prediction value.
 """
-type Feature {
+type Value {
     ...
 }
 ```
 
-Features are any data that is consumed or produced by a predictor.
+Values are any data consumed or produced by a predictor.
 
-## The `Feature` Type
-Function represent features with a URL that points to the feature data, along with type and shape information. Function also provides convenience fields for accessing the feature as plain types:
+## The `Value` Type
+Function represent values with a URL that points to the value data, along with type and shape information. Function also provides convenience fields for accessing the value as plain types:
 
-### Accessing the Feature Data
+### Accessing the Value Data
 ```graphql
 """
-Feature data URL.
+Value data URL.
 """
-data: URL!
+data: URL
 ```
 
-### Inspecting the Feature Type
+The `data` field holds a URL that points to the value data.
+
+{% callout %} This is either a web (`https://`) or data (`data:`) URL. {% /callout %}
+
+{% callout %} This is `null` when the value `type` is `null`. {% /callout %}
+
+### Inspecting the Value Type
 ```graphql
 """
-Feature data type.
+Value type.
 """
 type: Dtype!
 ```
 
-### Inspecting the Feature Shape
+Every value specifies its type. This information is critical in serializing and deserializing values when making predictions.
+
+### Inspecting the Value Shape
 ```graphql
 """
-Feature shape.
+Value shape.
 """
 shape: [Int!]
 ```
 
-The `shape` is populated for all numerical features. For tensor features, the shape provides crucial information used to serialize and deserialize the feature into a numpy `ndarray` for prediction.
+The `shape` is populated for all numerical values. For tensor values, the shape provides crucial information used to serialize and deserialize the value into a numpy `ndarray` for prediction.
 
 {% callout %} This is `null` if shape information is not available or applicable. {% /callout %}
 
 ### Accessing the String Value
 ```graphql
 """
-Feature data as a `string`.
+Value as a `string`.
 """
 stringValue: String
 ```
 
-This is a convenience property and is only populated for `string` features.
+This is a convenience property and is only populated for `string` values.
 
 ### Accessing the Float Value
 ```graphql
 """
-Feature data as a `float`.
+Value as a `float`.
 """
 floatValue: Float
 ```
 
-This is a convenience property and is only populated for `float32` or `float64` scalar features.
+This is a convenience property and is only populated for `float32` or `float64` scalar values.
 
 ### Accessing the Float Array
 ```graphql
 """
-Feature data as a flattened `float` array.
+Value as a flattened `float` array.
 """
 floatArray: [Float!]
 ```
 
-This is a convenience property and is only populated for `float32` tensor features.
+This is a convenience property and is only populated for `float32` tensor values.
 
 ### Accessing the Integer Value
 ```graphql
 """
-Feature data as an integer.
+Value as an integer.
 """
 intValue: Int
 ```
 
-This is a convenience property and is only populated for integer scalar features.
+This is a convenience property and is only populated for integer scalar values.
 
 ### Accessing the Integer Array
 ```graphql
 """
-Feature data as a flattened `int32` array.
+Value as a flattened `int32` array.
 """
 intArray: [Int!]
 ```
 
-This is a convenience property and is only populated for `int32` tensor features.
+This is a convenience property and is only populated for `int32` tensor values.
 
 ### Accessing the Boolean Value
 ```graphql
 """
-Feature data as a boolean.
+Value as a boolean.
 """
 boolValue: Boolean
 ```
 
-This is a convenience property and is only populated for `bool` scalar features.
+This is a convenience property and is only populated for `bool` scalar values.
 
 ### Accessing the Boolean Array
 ```graphql
 """
-Feature data as a flattened boolean array.
+Value as a flattened boolean array.
 """
 boolArray: [Boolean!]
 ```
 
-This is a convenience property and is only populated for `bool` tensor features.
+This is a convenience property and is only populated for `bool` tensor values.
 
 ### Accessing the List Value
 ```graphql
 """
-Feature data as a list.
+Value as a list.
 """
 listValue: JSON
 ```
 
-This is a convenience property and is only populated for `list` features.
+This is a convenience property and is only populated for `list` values.
 
 ### Accessing the Dictionary Value
 ```graphql
 """
-Feature data as a dictionary.
+Value as a dictionary.
 """
 dictValue: JSONObject
 ```
 
-This is a convenience property and is only populated for `dict` features.
+This is a convenience property and is only populated for `dict` values.
 
 ## Data Types in Function
-Function supports a fixed set of data types, which are used for serializing and deserializing features during predictions. These are contained in the `Dtype` scalar type:
+Function supports a fixed set of data types, which are used for serializing and deserializing values during predictions. These are contained in the `Dtype` scalar type:
 
 {% table .text-sm .ring .ring-gray-800 .ring-1 .ring-inset .rounded-lg .divide-y .divide-gray-800 .w-full %}
 * `Dtype`
 * Python Type
 * Serialization
 * Notes
+---
+* `null`
+* `None`
+* None
+* 
 ---
 * `float16`
 * `float` or `ndarray`
