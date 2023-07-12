@@ -10,8 +10,6 @@ Function allows you to run AI prediction functions on mobile, web, and in the cl
 
 Bring a Jupyter notebook with a `predict` function, and we'll spin up a serverless AI prediction service that can scale up to serve millions of customers, and scale down to zero when idle.
 
-___
-
 ## Installing Function
 Function provides clients for Python, JavaScript, Unity Engine, and the command line interface (CLI):
 
@@ -57,20 +55,21 @@ Function also provides Discord and Slack bots to make predictions right in your 
 {% quick-link title="Make Predictions in Slack" icon="/slack2.png" newTab=true href="https://api.fxn.ai/slack/install" description="Make predictions in any conversation with the `/predict` slash command." /%}
 {% /quick-links %}
 
-{% callout %} We have iOS (Swift) and Android (Java/Kotlin) integrations coming soon! {% /callout %}
-
----
+{% callout %} We have iOS (Swift) and Android (Java/Kotlin) clients coming soon! {% /callout %}
 
 ## Making a Prediction
-Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samplefxn/stable-diffusion) model which generates an image based on a text prompt. Make sure you have installed the Function CLI. Then open a terminal and run the following command:
+Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samplefxn/stable-diffusion) model which generates an image based on a text prompt:
+
+1. Make sure you have installed the Function CLI (see above).
+
+2. Open a terminal and run the following command:
+
 ```bash
 # Generate an image from a text prompt using Stable Diffusion
 fxn predict @samplefxn/stable-diffusion --prompt "An astronaut riding a horse on mars"
 ```
 
 ![predict](https://raw.githubusercontent.com/fxnai/.github/main/predict.gif)
-
-___
 
 ## Join the Party
 At this point, you've seen what Function is all about. Before getting into the weeds, here are a few useful links:
