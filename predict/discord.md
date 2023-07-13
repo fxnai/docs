@@ -30,10 +30,9 @@ Next, you need to authenticate so that Function knows what predictors you have a
 
 Next, head over to your [Account](https://fxn.ai/account) page on Function and paste in your Discord username:
 
-![Setting your Discord username on Function](/discord-fxn.gif)
+![Setting your Discord username on Function](/discord-login.gif)
 
 ## Making Predictions
-
 First, we'll need a predictor to make predictions with. You can either use a public predictor on Function, or make your own. In this guide, we'll be using the `@samplefxn/stable-diffusion` predictor:
 
 {% quick-links %}
@@ -41,7 +40,7 @@ First, we'll need a predictor to make predictions with. You can either use a pub
 {% quick-link title="@samplefxn/stable-diffusion" icon="/icon.png" newTab=true href="https://fxn.ai/@samplefxn/stable-diffusion" description="We'll be using the Stable Diffusion predictor in this guide." /%}
 {% /quick-links %}
 
-Next, use the `/predict` slash command to make the prediction:
+Next, use head over to Discord and use the `/predict` slash command to make the prediction:
 
 ```bash
 # Make a prediction in any Discord channel
