@@ -6,8 +6,6 @@ description: Run AI prediction functions on mobile, web, and in the cloud.
 
 Run AI prediction functions on mobile, web, and in the cloud. {% .text-2xl .text-gray-500 .font-normal %}
 
-Function allows you to run AI prediction functions on mobile, web, and in the cloud with a seamless workflow.
-
 Bring a Jupyter notebook with a `predict` function, and we'll spin up a serverless AI prediction service that can scale up to serve millions of customers, and scale down to zero when idle.
 
 ## Installing Function
