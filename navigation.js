@@ -9,11 +9,11 @@ export const navigation = [
   {
     title: "Making Predictions",
     links: [
-      { title: "From Code", href: "/predict" },
-      { title: "From Discord", href: "/predict/discord" },
-      { title: "From Slack", href: "/predict/slack" },
-      { title: "From Reddit", href: "/predict/reddit" },
-      { title: "From Zapier", href: "/predict/zapier" },
+      { title: "Predict from Code", href: "/predict" },
+      { title: "Predict from Slack", href: "/predict/slack" },
+      { title: "Predict from Discord", href: "/predict/discord" },
+      { title: "Predict from Zapier", href: "/predict/zapier" },
+      { title: "Predict from Reddit", href: "/predict/reddit" },
     ]
   },
   {
@@ -32,8 +32,8 @@ export const navigation = [
       { title: "Introduction", href: "/api" },
       { title: "Predictors", href: "/api/predictors" },
       { title: "Environment Variables", href: "/api/environment" },
-      { title: "Features", href: "/api/features" },
       { title: "Predictions", href: "/api/predictions" },
+      { title: "Values", href: "/api/values" },
       { title: "Changelog", href: "/api/changelog" },
     ]
   },
