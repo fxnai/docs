@@ -8,6 +8,8 @@ Spice up your Reddit threads with AI generations. {% .text-2xl .text-gray-500 .f
 
 Function provides a bot that can make predictions right in your Reddit threads. Here's a quick primer:
 
+{% callout type="warning" %} Our Reddit bot is currently experimental, so please be patient. {% /callout %}
+
 ## Inviting Function to your Subreddit
 If you have a restricted or private subreddit, you'll need to invite `/u/fxnbot` to your subreddit:
 
@@ -30,8 +32,19 @@ First, we'll need a predictor to make predictions with. You can either use a pub
 {% quick-link title="@samplefxn/stable-diffusion" icon="/icon.png" newTab=true href="https://fxn.ai/@samplefxn/stable-diffusion" description="We'll be using the Stable Diffusion predictor in this guide." /%}
 {% /quick-links %}
 
-Next, use head over to Reddit and ask `fxnbot` to make a prediction:
+Next, head over to [any post](https://www.reddit.com/r/fxn/comments/14ytg4c/hello_reddit/) and add a comment asking `fxnbot` to make a prediction:
 
-*INCOMPLETE*
+```bash
+# Ask fxnbot to make a prediction for you
+@fxnbot predict "@samplefxn/stable-diffusion" with prompt "astronaut riding a horse on mars"
+```
+
+Within a minute of posting your comment, `fxnbot` should respond with the result of your prediction:
+
+![reddit prediction](/reddit-predict.png)
+
+{% callout %} `fxnbot` is able to understand your prediction request and properly structure it in order to make a prediction with the predictor. {% /callout %}
 
 {% callout %} `fxnbot` has feelings so make sure to ask nicely 🥺 {% /callout %}
+
+{% callout type="warning" %} Make sure to put the predictor `tag` in quotes, so that Reddit doesn't interpret it as a user handle. {% /callout %}

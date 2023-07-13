@@ -22,7 +22,6 @@ export const navigation = [
       { title: "Creating Predictors", href: "/create" },
       { title: "Using Secrets", href: "/create/secrets" },
       { title: "Pulling from Private Repos", href: "/create/repos" },
-      { title: "Rendering with Blender", href: "/create/blender" },
       //{ title: "Bringing your own GPU", href: "/create/runhouse" },
     ]
   },
