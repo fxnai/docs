@@ -37,3 +37,6 @@ description: Create and share your predictors.
 - Function magics with `%load_ext fxn.magic`
 - Custom Python version
 - Custom Docker base image
+
+## More
+- Quick links for samples like blender rendering and others
