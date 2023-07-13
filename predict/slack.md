@@ -26,7 +26,14 @@ Next, you need to login to Function in Slack so that you can make predictions wi
 
 {% callout type="warning" %} We strongly recommend creating a separate access key to login on Slack, instead of reusing an existing access key. {% /callout %}
 
-Next, head over to Slack and use the `/fxn` slash command to login to Function with the access key you just generated:
+Next, head over to Slack and login with the `/fxn` slash command:
+
+```bash
+# Send this message in any Slack channel
+/fxn
+```
+
+You should see a login form pop up. Paste the access key you just generated and login:
 
 ![Logging in to Function on Slack](/slack-login.gif)
 
