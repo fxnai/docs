@@ -39,6 +39,8 @@ Next, head over to [any post](https://www.reddit.com/r/fxn/comments/14ytg4c/hell
 @fxnbot predict "@samplefxn/stable-diffusion" with prompt "astronaut riding a horse on mars"
 ```
 
+{% callout type="warning" %} Make sure to put the predictor `tag` in quotes, so that Reddit doesn't interpret it as a user handle. {% /callout %}
+
 Within a minute of posting your comment, `fxnbot` should respond with the result of your prediction:
 
 ![reddit prediction](/reddit-predict.png)
@@ -46,5 +48,3 @@ Within a minute of posting your comment, `fxnbot` should respond with the result
 {% callout %} `fxnbot` is able to understand your prediction request and properly structure it in order to make a prediction with the predictor. {% /callout %}
 
 {% callout %} `fxnbot` has feelings so make sure to ask nicely 🥺 {% /callout %}
-
-{% callout type="warning" %} Make sure to put the predictor `tag` in quotes, so that Reddit doesn't interpret it as a user handle. {% /callout %}
