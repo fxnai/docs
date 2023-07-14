@@ -7,15 +7,22 @@ export const navigation = [
     ],
   },
   {
-    title: "Guides",
+    title: "Making Predictions",
     links: [
-      { title: "Making Predictions", href: "/guides/predictions" },
-      { title: "Creating Predictors", href: "/guides/create" },
-      { title: "Using Secrets", href: "/guides/secrets" },
-      { title: "Pulling from Private Repos", href: "/guides/repos" },
-      { title: "Rendering with Blender", href: "/guides/blender" },
-      //{ title: "Bringing your own GPU", href: "/guides/runhouse" },
-      { title: "Creating Zapier Automations", href: "/guides/zapier" },
+      { title: "Predict from Code", href: "/predict" },
+      { title: "Predict from Slack", href: "/predict/slack" },
+      { title: "Predict from Discord", href: "/predict/discord" },
+      { title: "Predict from Zapier", href: "/predict/zapier" },
+      { title: "Predict from Reddit", href: "/predict/reddit" },
+    ]
+  },
+  {
+    title: "Creating Predictors",
+    links: [
+      { title: "Creating Predictors", href: "/create" },
+      { title: "Using Secrets", href: "/create/secrets" },
+      { title: "Pulling from Private Repos", href: "/create/repos" },
+      //{ title: "Bringing your own GPU", href: "/create/runhouse" },
     ]
   },
   {
@@ -24,8 +31,8 @@ export const navigation = [
       { title: "Introduction", href: "/api" },
       { title: "Predictors", href: "/api/predictors" },
       { title: "Environment Variables", href: "/api/environment" },
-      { title: "Features", href: "/api/features" },
       { title: "Predictions", href: "/api/predictions" },
+      { title: "Values", href: "/api/values" },
       { title: "Changelog", href: "/api/changelog" },
     ]
   },
