@@ -4,6 +4,6 @@ pageTitle: Secrets - Function
 description: Creating predictors that use secrets.
 ---
 
-### Specifying Environment Variables
+## Specifying Environment Variables
 - Predictor envs
 - Account envs
