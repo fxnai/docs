@@ -1,42 +1,164 @@
 ---
 title: Creating a Predictor
+pageTitle: Creating Predictors - Function
 description: Create and share your predictors.
 ---
 
-- Jupyter Notebooks
+Create and share your predictors. {% .text-2xl .text-gray-500 .font-normal %}
 
-## Creating a Predictor
-- Notebook with `predict` function
-- Skipping cells after `predict`
+Function uses Jupyter Notebooks as a self-contained format for creating predictors. Let's create a predictor that says a greeting to a user.
 
-### Creating a Cloud Predictor
-- Standard Jupyter. Install things with `%pip` or `!apt-get install`
-- Notes on signature inference
-    - Type annotations and docstrings
-- Demo on Hub
-- Endpoint acceleration
-    - Pricing
+## Creating the Predictor
+First, create a `predictor.ipynb` notebook and add this function in a Python cell:
+```python
+# Function requires your prediction function to be called "predict"
+def predict (first_name: str):
+    return f"Hello {first_name}!"
+```
 
-### Creating an Edge Predictor
-- Having a `model` to run inference
-- Notes on limitations with symbolic tracing
+{% callout %} The vast majority of predictors you create will have no Function-specific code or concepts. {% /callout %}
 
-### Specifying Environment Variables
-- Predictor envs
-- Account envs
+Our prediction function aceepts a `first_name` string and returns a greeting. With this, we can create the predictor on Function to run it from anywhere. Open a terminal and run the following command:
+```bash
+# Create the predictor
+fxn create @username/greeting predictor.ipynb --overwrite
+```
 
-## Deleting a Predictor
+{% callout %} Make sure to replace `@username` with your Function username. {% /callout %}
 
-### Deleting a Predictor
-- Notes
+Once you run this command, Function does two things:
 
-### Archiving a Predictor
-- Archiving
+1. Creates a *predictor signature* by analyzing your code.
+2. Containerizes and deploys your code.
 
-## Customizing Provisioning
-- Function magics with `%load_ext fxn.magic`
-- Custom Python version
-- Custom Docker base image
+## Defining the Predictor Signature
+The predictor signature provides information about the input and output values of your prediction function. It is the second most important component of any predictor, second to its actual code.
 
-## More
-- Quick links for samples like blender rendering and others
+Function relies solely on code annotations to infer the signature of your predictor. For example, Function will infer the following signature from our predictor above:
+```json
+{
+  "inputs": [
+    {
+      "name": "first_name",
+      "type": "string"
+    }
+  ],
+  "outputs": []
+}
+```
+
+{% callout %} We strongly recommend using type annotations on all parameters in your prediction function. It makes for better code. {% /callout %}
+
+Function is also able to infer more of your predictor signature from your prediction function's docstring. For example, let's add an `age` parameter to our original function:
+```python {% highlight=[7] %}
+def predict (first_name: str, age: int):
+    """
+    Say a greeting to a user.
+
+    Parameters:
+        first_name (str): The user's first name.
+        age (int): The user's age. This should be more than 13 but less than 80.
+    """
+    return f"Hello {first_name}! You are {age} years old"
+```
+
+With the added docstring, Function will infer the following signature from the predictor:
+```json {% highlight=["9..12"] %}
+{
+  "inputs": [
+    {
+      "name": "first_name",
+      "type": "string",
+      "description": "The user's first name."
+    },
+    {
+      "name": "age",
+      "type": "int32",
+      "description": "The user's age. This should be more than 13 but less than 80.",
+      "range": [14, 79] // Function infers this from your docstring
+    }
+  ],
+  "outputs": []
+}
+```
+
+{% callout %} Function is able to infer the parameter name, type, description, range, default value, enumeration values, and whether it is optional. {% /callout %}
+
+{% callout %} You can think of Function as a software engineer on your team. It understands clearly written and documented code. {% /callout %}
+
+## Defining the Predictor Card
+The predictor card is effectively a readme for the predictor. It informs prospective users about what the predictor does, any considerations on its usage, the predictor license, and more. It is shown prominently on [fxn.ai](https://fxn.ai/explore), and will be the first thing that users will read.
+
+To define a predictor card, simply add a Markdown cell as the very first cell in your predictor notebook. During provisioning, Function will automatically pull out that cell's contents and use it as the predictor card.
+
+{% callout %} Because the predictor cell is written in Markdown, you can use rich text formatting such as headings, image and video embeds, and more. {% /callout %}
+
+## Installing Dependencies
+When creating a prediction function, you will often need to use third-party libraries as dependencies. Function relies on magic commands in Jupyter/IPython to install these dependencies:
+
+### Installing Python Packages
+Our predictor above has a weird bug. Once the predictor is provisioned, opena a terminal and run this prediction:
+```bash
+# Make a prediction with age=1
+fxn predict @username/greeting --name "John" --age 1
+```
+
+{% callout %} Make sure to replace `@username` with your Function username. {% /callout %}
+
+You should see the following result:
+```json {% highlight=[4] %}
+{
+  ...,
+  "results": [
+    "Hello John! You are 1 years old"
+  ]
+}
+```
+
+We have a typo! We aren't properly pluralizing the word "years". Thankfully, we can use the [`pluralizer`](https://pypi.org/project/pluralizer/) Python package to fix this.
+
+To install the package while our predictor is being provisioned, add a code cell *before* our `predict` function and add the following:
+```python
+# Install the pluralizer package
+%pip install pluralizer
+```
+
+Then modify the `predict` function to use the pluralizer:
+```python {% highlight=[1,"3..4","14..15",17] %}
+from pluralizer import Pluralizer
+
+# Create a pluralizer
+pluralizer = Pluralizer()
+
+def predict (first_name: str, age: int):
+    """
+    Say a greeting to a user.
+
+    Parameters:
+        first_name (str): The user's first name.
+        age (int): The user's age. This should be more than 13 but less than 80.
+    """
+    # Pluralize "year"
+    years_str = pluralizer.pluralize("year", age)
+    # Return the greeting
+    return f"Hello {first_name}! You are {age} {years_str} old"
+```
+
+{% callout %} Note that the `pluralizer` global variable is created when our predictor is first made active. All prediction requests will use the same `pluralizer` instance. {% /callout %}
+
+You can test the updated predictor right in the notebook. Simply create a new cell and call the `predict` function:
+```bash
+# Test out the updated predictor
+greeting = predict("John", 1)
+print(greeting)
+#: Hello John! You are 1 year old
+```
+
+### Installing System Packages
+You can install system packages to be installed while your predictor is being provisioned. Simply use the `apt-get` package manager tool:
+```bash
+# Install FFmpeg so that our predictor can use it
+!apt-get install ffmpeg
+```
+
+{% callout %} The `!` IPython magic command can be used to run arbitrary system commands, in addition to installing system packages. {% /callout %}

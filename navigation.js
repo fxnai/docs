@@ -20,8 +20,10 @@ export const navigation = [
     title: "Creating Predictors",
     links: [
       { title: "Creating Predictors", href: "/create" },
+      { title: "Using the GPU", href: "/create/gpu" },
       { title: "Using Secrets", href: "/create/secrets" },
       { title: "Pulling from Private Repos", href: "/create/repos" },
+      { title: "Using Custom Images", href: "/create/images" },
       //{ title: "Bringing your own GPU", href: "/create/runhouse" },
     ]
   },
