@@ -38,14 +38,3 @@ Function uses Jupyter notebooks as a self-contained file to create, manage, and 
 {% quick-link title="Greeting notebook" icon="/icon.png" newTab=true href="https://github.com/fxnai/samples/blob/main/greeting.ipynb" description="RADA" /%}
 {% quick-link title="Stable diffusion notebook" icon="/icon.png" newTab=true href="https://github.com/fxnai/samples/blob/main/stable-diffusion.ipynb" description="RADA" /%}
 {% /quick-links %}
-
-Though you can provide a notebook with only a `predict` function, we recommend writing notebooks with the following format:
-
-### Predictor Card
-*INCOMPLETE*
-
-### Predictor Setup
-*INCOMPLETE*
-
-### Predictor Implementation
-*INCOMPLETE*
