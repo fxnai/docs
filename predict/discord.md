@@ -1,7 +1,7 @@
 ---
-title: Making Predictions from Discord
+title: Making Predictions in Discord
 pageTitle: Discord Predictions - Function
-description: Make AI predictions from Discord.
+description: Make AI predictions in Discord.
 ---
 
 Boost your Discord servers with AI predictions. {% .text-2xl .text-gray-500 .font-normal %}
@@ -21,8 +21,8 @@ Doing so will ask you to authorize `fxnbot` to join your server:
 
 {% callout %} You can only add `fxnbot` to Discord servers where you are an admin. {% /callout %}
 
-## Logging in on Discord
-Next, you need to authenticate so that Function knows what predictors you have access to. Function authenticates you using your Discord username. First, head over to [Discord](https://discord.com/app) and grab your username:
+## Logging in to Function
+Function authenticates you using your Discord username. First, head over to [Discord](https://discord.com/app) and grab your username:
 
 ![Retrieving your Discord username](/discord-username.gif)
 

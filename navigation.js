@@ -9,11 +9,14 @@ export const navigation = [
   {
     title: "Making Predictions",
     links: [
-      { title: "Predict from Code", href: "/predict" },
-      { title: "Predict from Slack", href: "/predict/slack" },
-      { title: "Predict from Discord", href: "/predict/discord" },
-      { title: "Predict from Zapier", href: "/predict/zapier" },
-      { title: "Predict from Reddit", href: "/predict/reddit" },
+      { title: "Predict in Python", href: "/predict" },
+      { title: "Predict in the CLI", href: "/predict/cli" },
+      { title: "Predict in JavaScript", href: "/predict/javascript" },
+      { title: "Predict in Unity", href: "/predict/unity" },
+      { title: "Predict in Slack", href: "/predict/slack" },
+      { title: "Predict in Discord", href: "/predict/discord" },
+      { title: "Predict in Zapier", href: "/predict/zapier" },
+      { title: "Predict in Reddit", href: "/predict/reddit" },
     ]
   },
   {
@@ -22,7 +25,7 @@ export const navigation = [
       { title: "Creating Predictors", href: "/create" },
       { title: "Using the GPU", href: "/create/gpu" },
       { title: "Using Secrets", href: "/create/secrets" },
-      { title: "Pulling from Private Repos", href: "/create/repos" },
+      { title: "Using Private Repos", href: "/create/repos" },
       { title: "Using Custom Images", href: "/create/images" },
       //{ title: "Bringing your own GPU", href: "/create/runhouse" },
     ]
