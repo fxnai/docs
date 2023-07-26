@@ -1,7 +1,7 @@
 ---
-title: Making Predictions from Slack
+title: Making Predictions in Slack
 pageTitle: Slack Predictions - Function
-description: Make AI predictions from Slack.
+description: Make AI predictions in Slack.
 ---
 
 Building AI apps in collaboration with your team. {% .text-2xl .text-gray-500 .font-normal %}
@@ -19,8 +19,8 @@ Doing so will ask you to authorize Function to join your server:
 
 ![Installing Function in a Slack workspace](/slack-install.png)
 
-## Logging in on Slack
-Next, you need to login to Function in Slack so that you can make predictions with your predictors. First, head over to your [Account](https://fxn.ai/account) page on Function to generate a new access key for Slack:
+## Logging in to Function
+Head over to your [Account](https://fxn.ai/account) page on Function to generate a new access key for Slack:
 
 ![generate access key](https://raw.githubusercontent.com/fxnai/.github/main/access_key.gif)
 

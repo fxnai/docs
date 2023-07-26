@@ -18,7 +18,7 @@ def predict (first_name: str):
 
 {% callout %} The vast majority of predictors you create will have no Function-specific code or concepts. {% /callout %}
 
-Our prediction function aceepts a `first_name` string and returns a greeting. With this, we can create the predictor on Function to run it from anywhere. Open a terminal and run the following command:
+Our prediction function accepts a `first_name` string and returns a greeting. With this, we can create the predictor on Function to run it from anywhere. Open a terminal and run the following command:
 ```bash
 # Create the predictor
 fxn create @username/greeting predictor.ipynb --overwrite
@@ -32,7 +32,7 @@ Once you run this command, Function does two things:
 2. Containerizes and deploys your code.
 
 ## Defining the Predictor Signature
-The predictor signature provides information about the input and output values of your prediction function. It is the second most important component of any predictor, second to its actual code.
+The predictor signature provides information about the input and output values of your prediction function. It is the second most important component of any predictor, second to the actual code.
 
 Function relies solely on code annotations to infer the signature of your predictor. For example, Function will infer the following signature from our predictor above:
 ```json
@@ -50,7 +50,7 @@ Function relies solely on code annotations to infer the signature of your predic
 {% callout %} We strongly recommend using type annotations on all parameters in your prediction function. It makes for better code. {% /callout %}
 
 Function is also able to infer more of your predictor signature from your prediction function's docstring. For example, let's add an `age` parameter to our original function:
-```python {% highlight=[7] %}
+```python {% highlight=[1,7,9] %}
 def predict (first_name: str, age: int):
     """
     Say a greeting to a user.
@@ -89,15 +89,23 @@ With the added docstring, Function will infer the following signature from the p
 ## Defining the Predictor Card
 The predictor card is effectively a readme for the predictor. It informs prospective users about what the predictor does, any considerations on its usage, the predictor license, and more. It is shown prominently on [fxn.ai](https://fxn.ai/explore), and will be the first thing that users will read.
 
-To define a predictor card, simply add a Markdown cell as the very first cell in your predictor notebook. During provisioning, Function will automatically pull out that cell's contents and use it as the predictor card.
+To define a predictor card, simply add a Markdown cell as the very first cell in your predictor notebook. During provisioning, Function will automatically pull it out as the predictor card.
 
 {% callout %} Because the predictor cell is written in Markdown, you can use rich text formatting such as headings, image and video embeds, and more. {% /callout %}
 
 ## Installing Dependencies
-When creating a prediction function, you will often need to use third-party libraries as dependencies. Function relies on magic commands in Jupyter/IPython to install these dependencies:
+When creating a prediction function, you will often need to use third-party libraries. Function relies on Jupyter magic commands to install these dependencies:
 
 ### Installing Python Packages
-Our predictor above has a weird bug. Once the predictor is provisioned, opena a terminal and run this prediction:
+Recreate the modified predictor from above on Function by opening a terminal and running the following command:
+```bash
+# Recreate the predictor
+fxn create @username/greeting predictor.ipynb --overwrite
+```
+
+{% callout %} Make sure to replace `@username` with your Function username. {% /callout %}
+
+Once the predictor is active, run the following command to make a prediction:
 ```bash
 # Make a prediction with age=1
 fxn predict @username/greeting --name "John" --age 1
@@ -117,7 +125,7 @@ You should see the following result:
 
 We have a typo! We aren't properly pluralizing the word "years". Thankfully, we can use the [`pluralizer`](https://pypi.org/project/pluralizer/) Python package to fix this.
 
-To install the package while our predictor is being provisioned, add a code cell *before* our `predict` function and add the following:
+To install the package, add a code cell *before* the `predict` function and add the following:
 ```python
 # Install the pluralizer package
 %pip install pluralizer
