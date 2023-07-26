@@ -1,7 +1,7 @@
 ---
-title: Making Predictions from Zapier
+title: Making Predictions in Zapier
 pageTitle: Zapier Predictions - Function
-description: Make AI predictions from Zapier.
+description: Make AI predictions in Zapier.
 ---
 
 Build AI-powered automations with no code. {% .text-2xl .text-gray-500 .font-normal %}
@@ -25,6 +25,8 @@ First, create a form on [Google Forms](https://www.google.com/forms/about/) with
 Next, head over to [Zapier](https://zapier.com) and create a new zap. Add a Google Forms trigger by logging in to Google and connecting the form you just created:
 
 ![creating a form trigger on Zapier](/zapier-form-trigger.png)
+
+*INCOMPLETE*: User must fill in their form to generate a sample response to be used in Zapier.
 
 ## Logging in to Function
 First, add a Function action:

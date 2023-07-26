@@ -1,7 +1,7 @@
 ---
-title: Making Predictions from Reddit
+title: Making Predictions in Reddit
 pageTitle: Reddit Predictions - Function
-description: Make AI predictions from Reddit.
+description: Make AI predictions in Reddit.
 ---
 
 Spice up your Reddit threads with AI generations. {% .text-2xl .text-gray-500 .font-normal %}
@@ -17,8 +17,8 @@ If you have a restricted or private subreddit, you'll need to invite `/u/fxnbot`
 {% quick-link title="/u/fxnbot" icon="/icon.png" newTab=true href="https://www.reddit.com/user/fxnbot" description="Function bot on Reddit." /%}
 {% /quick-links %}
 
-## Logging in on Reddit
-Next, you need to authenticate so that Function knows what predictors you have access to. Function authenticates you using your Reddit username. First, head over to [Reddit](https://reddit.com) and grab your username.
+## Logging in to Function
+Function authenticates you using your Reddit username. First, head over to [Reddit](https://reddit.com) and grab your username.
 
 Next, head over to your [Account](https://fxn.ai/account) page on Function and paste in your Reddit username:
 
