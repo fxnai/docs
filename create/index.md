@@ -26,10 +26,11 @@ fxn create @username/greeting predictor.ipynb --overwrite
 
 {% callout %} Make sure to replace `@username` with your Function username. {% /callout %}
 
-Once you run this command, Function does two things:
+Once you run this command, Function does three things:
 
 1. Creates a *predictor signature* by analyzing your code.
-2. Containerizes and deploys your code.
+2. Invokes the code in your notebook, *up until the `predict` function*.
+3. Containerizes and deploys your code.
 
 ## Defining the Predictor Signature
 The predictor signature provides information about the input and output values of your prediction function. It is the second most important component of any predictor, second to the actual code.
