@@ -149,7 +149,7 @@ This is a convenience property and is only populated for `dict` values.
 ## Data Types in Function
 Function supports a fixed set of data types, which are used for serializing and deserializing values during predictions. These are contained in the `Dtype` scalar type:
 
-{% table .text-sm .ring .ring-gray-800 .ring-1 .ring-inset .rounded-lg .divide-y .divide-gray-800 .w-full %}
+{% table .text-sm .ring .text-gray-200 .ring-gray-800 .ring-1 .ring-inset .rounded-lg .divide-y .divide-gray-800 .w-full %}
 * `Dtype`
 * Python Type
 * Serialization
@@ -243,20 +243,20 @@ Function supports a fixed set of data types, which are used for serializing and 
 * `video`
 * `Path`
 * User-defined
-* Predictor receives video path.
+* Predictor receives video `Path`.
 ---
 * `audio`
 * `Path`
 * User-defined
-* Predictor receives audio path.
+* Predictor receives audio `Path`.
 ---
 * `model`
 * `Path`
 * User-defined
-* Predictor receives 3D model path.
+* Predictor receives 3D model `Path`.
 ---
 * `binary`
 * `Path`
 * User-defined
-* Predictor receives binary path.
+* Predictor receives binary `Path`.
 {% /table %}
