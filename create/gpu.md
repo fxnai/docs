@@ -45,7 +45,7 @@ Note that we added the `to("cuda")` call inside the `predict` function, not outs
 {% callout type="warning" %} Predictors can only have GPU access at runtime, and will never have GPU access while provisioning. {% /callout %}
 
 ## Creating the Predictor
-The final step in using the GPU is to specify the `acceleration` when creating the predictor. Function currently supports the following accelerations:
+The final step in using the GPU is to specify the `acceleration` when creating the predictor. Function currently supports the following acceleration types:
 
 {% table .text-lg .mb-4 .text-gray-200 .ring .ring-gray-800 .ring-1 .ring-inset .rounded-lg .divide-y .divide-gray-800 .w-full %}
 * `Acceleration`
