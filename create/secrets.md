@@ -36,7 +36,7 @@ def predict (audio: Path) -> str:
 
 This predictor accepts an `audio` path pointing to an audio file on the system. It then transcribes the file using OpenAI's hosted Whisper service, then returns the transcribed text.
 
-{% callout %} Function serializes an `audio` value to a `Path` which points to the audio file. See [Value](/api/values) {% /callout %}
+{% callout %} Function serializes any `audio` input value to a `Path` which points to the audio file. See more on [Value](/api/values) {% /callout %}
 
 ## Using Secrets in Code
 We have to specify our OpenAI API key to use the Whisper service in our code. In Function, environment variables are accessed through the `os.environ` dictionary. Let's now update our code to set the API key:
@@ -60,13 +60,13 @@ def predict (audio: Path) -> str:
 
 {% callout %} During provisioning, Function injects environment variables to your predictor container, making them globally accessible. {% /callout %}
 
-{% callout %} We technically don't need the added lines above because the OpenAI library automatically finds [`OPENAI_API_KEY`](https://github.com/openai/openai-python/blob/b82a3f7e4c462a8a10fa445193301a3cefef9a4a/openai/__init__.py#L42) {% /callout %}
+{% callout %} We technically don't need the added lines above because the OpenAI library automatically finds the [`OPENAI_API_KEY`](https://github.com/openai/openai-python/blob/b82a3f7e4c462a8a10fa445193301a3cefef9a4a/openai/__init__.py#L42) env. {% /callout %}
 
-## Specifying Secrets
-Function provides two ways to specify environment variables to predictors:
+## Defining Secrets
+Function provides two ways to define environment variables to predictors:
 
 ### Global Secrets
-Global secrets are available to all predictors under a given account. To specify a global secret, use the Function CLI:
+Global secrets are available to all predictors under a given account. To define a global secret, use the Function CLI:
 ```bash
 # Open a terminal and run the following command:
 fxn env create OPENAI_API_KEY 1234abcd
@@ -76,12 +76,12 @@ fxn env create OPENAI_API_KEY 1234abcd
 
 {% callout %} Once a secret is created, its value can only be viewed on [fxn.ai](https://fxn.ai/account/developers) {% /callout %}
 
-You can also specify global secrets on [fxn.ai](https://fxn.ai/account/developers)
+You can also define global secrets on [fxn.ai](https://fxn.ai/account/developers)
 
 ![specifying global secrets on Function](/fxn-env.png)
 
 ### Predictor Secrets
-As the name implies, predictor secrets are specific to a given predictor. To specify a predictor secret, use the `--env` flag in the Function CLI:
+As the name implies, predictor secrets are specific to a given predictor. To define a predictor secret, use the `--env` flag when creating the predictor in the Function CLI:
 ```bash
 # Open a terminal and run this command to create our predictor
 fxn create @username/transcribe transcribe.ipynb --env OPENAI_API_KEY=1234abcd
@@ -89,16 +89,18 @@ fxn create @username/transcribe transcribe.ipynb --env OPENAI_API_KEY=1234abcd
 
 {% callout %} Replace `@username` with your Function username. {% /callout %}
 
-{% callout %} When specifying predictor secrets, you must use the following format: `--env NAME=VALUE`. {% /callout %}
+{% callout %} When defining predictor secrets, you must use the following format: `--env NAME=VALUE`. {% /callout %}
 
 ## Making a Prediction
-If you haven't already, head over to [OpenAI](https://platform.openai.com/account/api-keys) to generate a new API key. We recommend creating API keys as global secrets on Function, so open a terminal and run the following command:
+If you haven't already, head over to [OpenAI](https://platform.openai.com/account/api-keys) to generate a new API key. Then define a new global secret:
 ```bash
 # Open a terminal and run the following command:
 fxn env create OPENAI_API_KEY <YOUR OPENAI API KEY>
 ```
 
-Now, let's create the predictor
+{% callout %} We recommend creating API keys as global secrets on Function. {% /callout %}
+
+Now, let's create the predictor:
 ```bash
 # Create the predictor
 fxn create @username/transcribe transcribe.ipynb
