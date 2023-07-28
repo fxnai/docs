@@ -6,7 +6,7 @@ description: Rendering Images and Animations on Function.
 
 Rendering Images and Animations on Function. {% .text-2xl .text-gray-500 .font-normal %}
 
-Function can be used for much more than AI predictions. In this example, we will render an image by leveraging the GPU on Function:
+Function can be used for much more than AI predictions. In this example, we will render an image using Blender on Function.
 
 ## Implementing the Predictor
 Create a `rendering.ipynb` notebook and add the following code cell to install system libraries that Blender requires:
@@ -36,8 +36,7 @@ def predict () -> Image.Image:
     ops.wm.read_homefile()    
     # Configure Cycles renderer to use all available GPUs
     context.scene.render.engine = "CYCLES"
-    cycles_settings = context.scene.cycles
-    cycles_settings.samples = 16
+    context.scene.cycles.samples = 16
     context.scene.cycles.device = "GPU"
     context.preferences.addons["cycles"].preferences.compute_device_type = "OPTIX"
     context.preferences.addons["cycles"].preferences.get_devices()
@@ -56,7 +55,7 @@ def predict () -> Image.Image:
 {% callout %} Note that our prediction function takes no input parameters. Predictors are not required to accept or return anything. {% /callout %}
 
 ## Creating the Predictor
-Now, let's provision the predictor on Function. We will be running our predictor on an `A40` GPU to reduce our rendering times. Open a terminal and run the following command:
+Now, let's provision the predictor on Function. We will be running our predictor on an `A40` GPU to speed up rendering. Open a terminal and run the following command:
 ```bash
 # Create the predictor on Function
 fxn create @username/rendering rendering.ipynb --acceleration A40

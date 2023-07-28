@@ -46,3 +46,14 @@ The predictor accepts a `name` of the person to greet, optionally with their `ag
 # Predict
 fxn predict @samplefxn/greeting --name Rhea --age 44 --city "Los Angeles"
 ```
+
+### Using File Inputs
+For predictors that accept binary data (e.g. image, audio, video, binary files), pass in the file path prefixed with the `@` character. 
+
+Here's an example that makes a prediction on an image file `cat.jpg` using a generic `classifier` predictor:
+```bash
+# Make a prediction using a file input
+fxn predict @username/classifier --image @cat.jpg
+```
+
+{% callout %} The use of the `@` character for working with files is similar to `cURL`. {% /callout %}

@@ -18,7 +18,7 @@ type Value {
 Values are any data consumed or produced by a predictor.
 
 ## The `Value` Type
-Function represent values with a URL that points to the value data, along with type and shape information. Function also provides convenience fields for accessing the value as plain types:
+Function represent values with a URL that points to the value data, along with type and shape information. Function also provides convenience fields for accessing the value as plain types.
 
 ### Accessing the Value Data
 ```graphql
@@ -216,13 +216,13 @@ Function supports a fixed set of data types, which are used for serializing and 
 * Python type depends on `shape`
 ---
 * `bool`
-* `int` or `ndarray`
+* `bool` or `ndarray`
 * Raw bytes
 * Python type depends on `shape`
 ---
 * `string`
 * `str`
-* Raw bytes
+* UTF-8 bytes
 * Python type depends on `shape`
 ---
 * `list`

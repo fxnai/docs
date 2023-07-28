@@ -154,17 +154,17 @@ When a predictor is created, a description can be specified. This assists users 
 
 {% callout %} The `description` must be 200 characters or less. {% /callout %}
 
-### Explaining the Predictor
+### Predictor Card
 ```graphql
 """
-Predictor readme.
+Predictor card.
 This is extracted from the first cell of the predictor notebook.
 """
-readme: String
+card: String
 ```
-The predictor can also report a `readme`. This readme is always extracted from the first cell of the predictor notebook, if the first cell of the predictor notebook is a Markdown cell.
+The predictor card is extracted from the first cell of the predictor notebook, if and only if the first cell is a Markdown cell. This card is displayed prominently on [fxn.ai](https://fxn.ai) and should contain useful information about the predictor.
 
-{% callout %} The `readme` is always Markdown. {% /callout %}
+{% callout %} The `card` is always Markdown. {% /callout %}
 
 ### Viewing the Predictor Media
 ```graphql
