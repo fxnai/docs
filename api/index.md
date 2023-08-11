@@ -67,7 +67,7 @@ If your URL responds with a `200` status, Function will authorize the prediction
 
 {% callout %} Remember the [intro](/) where you installed Function and immediately made a prediction? That worked because `@samplefxn` uses an `authorizationUrl` that lets beautiful people make predictions 😉 {% /callout %}
 
-On the other hand, your endpoint can respond with a `400` status or specify an `error` to be relayed to the user:
+On the other hand, your endpoint can respond with an `error` key which will not allow the prediction to be made. The `error` will be relayed to the user:
 ```js
 {
     "error": "You have not yet paid 😛"
