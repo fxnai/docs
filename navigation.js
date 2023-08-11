@@ -26,7 +26,6 @@ export const navigation = [
       { title: "Using the GPU", href: "/create/gpu" },
       { title: "Using Secrets", href: "/create/secrets" },
       { title: "Using Git Repos", href: "/create/repos" },
-      //{ title: "Using Custom Images", href: "/create/images" },
       { title: "Rendering with Blender", href: "/create/rendering" },
       //{ title: "Bringing your own GPU", href: "/create/runhouse" },
     ]
