@@ -16,7 +16,7 @@ export const navigation = [
       { title: "Predict in Slack", href: "/predict/slack" },
       { title: "Predict in Discord", href: "/predict/discord" },
       { title: "Predict in Zapier", href: "/predict/zapier" },
-      { title: "Predict in Reddit", href: "/predict/reddit" },
+      //{ title: "Predict in Reddit", href: "/predict/reddit" },
     ]
   },
   {
