@@ -2,6 +2,8 @@
 
 ![function logo](https://raw.githubusercontent.com/fxnai/.github/main/logo_wide.png)
 
+[![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscord.com%2Fapi%2Finvites%2Fy5vwgXkz2f%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&logo=discord&logoColor=white&label=Function%20community)](https://fxn.ai/community)
+
 The Function documentation, used both internally and by our users. View at [docs.fxn.ai](https://docs.fxn.ai).
 
 ## Design Goals
