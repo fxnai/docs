@@ -23,12 +23,14 @@ First, head over to your [Account](https://fxn.ai/account/developers) page to ge
 Now, let's login to Function with your access key:
 
 ```py {% framework="python" %}
-import fxn
+from fxn import Function
 
-# Set your access key
+# Create the Function client with your access key
 # Or set the `FXN_ACCESS_KEY` environment variable
-fxn.access_key = "<ACCESS KEY>"
+fxn = Function(access_key="<ACCESS KEY>")
 ```
+
+{% callout %} If you don't provide an `access_key` to the Function client, the `FXN_ACCESS_KEY` environment variable will be used. {% /callout %}
 
 ## Making Predictions
 First, we'll need a predictor to make predictions with. You can either use a public predictor on Function, or make your own. In this guide, we'll be using the `@samplefxn/greeting` predictor:
@@ -42,7 +44,7 @@ The predictor accepts a `name` of the person to greet, optionally with their `ag
 
 ```py {% framework="python" %}
 # Predict
-prediction = fxn.Prediction.create(
+prediction = fxn.predictions.create(
     tag="@samplefxn/greeting",
     name="Rhea",
     age=44,

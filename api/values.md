@@ -223,7 +223,7 @@ Function supports a fixed set of data types, which are used for serializing and 
 * `string`
 * `str`
 * UTF-8 bytes
-* Python type depends on `shape`
+* 
 ---
 * `list`
 * `list`
