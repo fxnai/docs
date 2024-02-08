@@ -16,7 +16,7 @@ pip install --upgrade fxn
 ```
 
 ## Logging in to Function
-First, head over to your [Account](https://fxn.ai/account/developers) page to generate an access key:
+First, head over to your [Account](https://fxn.ai/account/developer) page to generate an access key:
 
 ![generate access key](https://raw.githubusercontent.com/fxnai/.github/main/access_key.gif)
 
