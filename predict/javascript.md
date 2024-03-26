@@ -1,14 +1,14 @@
 ---
 title: Making Predictions in JavaScript
 pageTitle: JavaScript Predictions - Function
-description: Make AI predictions in JavaScript.
+description: Make predictions in JavaScript.
 ---
 
-Make AI predctions in the browser and in Node.js. {% .text-2xl .text-gray-500 .font-normal %}
+Make predctions in the browser and in Node.js. {% .text-2xl .text-gray-500 .font-normal %}
 
 Function provides a JavaScript client for making predictions in the browser, in frameworks like React and Next.js, and in Node.js.
 
-In this example, we'll make a minimal Next.js website that accepts a prompt and generates an image using [`@samplefxn/stable-diffusion`](https://fxn.ai/@samplefxn/stable-diffusion)
+In this example, we'll make a minimal Next.js website that accepts a prompt and generates an image using [`@samples/stable-diffusion`](https://fxn.ai/@samples/stable-diffusion)
 
 ## Creating a Next.js Project
 Following the [Next.js quickstart](https://nextjs.org/learn/basics/create-nextjs-app/setup), open a terminal and run the following command:
@@ -129,7 +129,7 @@ const generate = async () => {
   setLoading(true);
   const fxn = new Function({ accessKey: "<ACCESS KEY>" });
   const prediction = await fxn.predictions.create({
-    tag: "@samplefxn/stable-diffusion",
+    tag: "@samples/stable-diffusion",
     inputs: { prompt }
   });
   setImageUrl(prediction.results[0].data);

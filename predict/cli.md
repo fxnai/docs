@@ -1,10 +1,10 @@
 ---
 title: Making Predictions in the CLI
 pageTitle: CLI Predictions - Function
-description: Make AI predictions in the CLI.
+description: Make predictions in the CLI.
 ---
 
-Make AI predictions in the command line interface. {% .text-2xl .text-gray-500 .font-normal %}
+Make predictions in the command line interface. {% .text-2xl .text-gray-500 .font-normal %}
 
 You can make predictions right in the command line.
 
@@ -22,7 +22,6 @@ Next, head over to your [Account](https://fxn.ai/account/developers) page to gen
 
 Now, you can login to Function CLI with your access key:
 
-
 ```bash {% framework="cli" %}
 # Open a terminal and run the following command
 fxn auth login <ACCESS KEY>
@@ -33,18 +32,18 @@ Here is an example showing a successful login in the CLI:
 ![login to CLI](https://raw.githubusercontent.com/fxnai/.github/main/auth_login.gif)
 
 ## Making Predictions
-We'll need a predictor to make predictions with. You can either use a public predictor on Function, or [make your own](/create). In this guide, we'll be using the `@samplefxn/greeting` predictor:
+We'll need a predictor to make predictions with. You can either use a public predictor on Function, or [make your own](/create). In this guide, we'll be using the `@samples/greeting` predictor:
 
 {% quick-links %}
 {% quick-link title="Explore Predictors" icon="/icon.png" newTab=true href="https://fxn.ai/explore" description="You can discover and use public predictors on Function." /%}
-{% quick-link title="@samplefxn/greeting" icon="/icon.png" newTab=true href="https://fxn.ai/@samplefxn/greeting" description="We'll be using the greeting predictor in this guide." /%}
+{% quick-link title="@samples/greeting" icon="/icon.png" newTab=true href="https://fxn.ai/@samples/greeting" description="We'll be using the greeting predictor in this guide." /%}
 {% /quick-links %}
 
 The predictor accepts a `name` of the person to greet, optionally with their `age` and `city`. Let's make the prediction:
 
 ```bash {% framework="cli" %}
 # Predict
-fxn predict @samplefxn/greeting --name Rhea --age 44 --city "Los Angeles"
+fxn predict @samples/greeting --name Rhea --age 44 --city "Los Angeles"
 ```
 
 ### Using File Inputs

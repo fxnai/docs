@@ -12,7 +12,7 @@ Function uses Jupyter Notebooks as a self-contained format for creating predicto
 First, create a `predictor.ipynb` notebook and add this function in a Python cell:
 ```python
 # Function requires your prediction function to be called "predict"
-def predict (first_name: str):
+def predict (first_name: str) -> str:
     return f"Hello {first_name}!"
 ```
 
@@ -32,7 +32,7 @@ Once you run this command, Function does three things:
 2. Invokes the code in your notebook, *up until the `predict` function*.
 3. Containerizes and deploys your code.
 
-## Defining the Predictor Signature
+## Inferring the Predictor Signature
 The predictor signature provides information about the input and output values of your prediction function. It is the second most important component of any predictor, second to the actual code.
 
 Function relies solely on code annotations to infer the signature of your predictor. For example, Function will infer the following signature from our predictor above:
@@ -85,9 +85,9 @@ With the added docstring, Function will infer the following signature from the p
 
 {% callout %} Function is able to infer the parameter name, type, description, range, default value, enumeration values, and whether it is optional. {% /callout %}
 
-{% callout %} You can think of Function as a software engineer on your team. It understands clearly written and documented code. {% /callout %}
+{% callout %} Function can also infer a JSON `schema` for parameters that are annotated with a [Pydantic](https://docs.pydantic.dev/latest/) model type. {% /callout %}
 
-## Defining the Predictor Card
+## Inferring the Predictor Card
 The predictor card is effectively a readme for the predictor. It informs prospective users about what the predictor does, any considerations on its usage, the predictor license, and more. It is shown prominently on [fxn.ai](https://fxn.ai/explore), and will be the first thing that users will read.
 
 To define a predictor card, simply add a Markdown cell as the very first cell in your predictor notebook. During provisioning, Function will automatically pull it out as the predictor card.

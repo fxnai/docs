@@ -23,6 +23,7 @@ export const navigation = [
     title: "Creating Predictors",
     links: [
       { title: "Creating Predictors", href: "/create" },
+      { title: "Running Locally", href: "/create/edge" },
       { title: "Using the GPU", href: "/create/gpu" },
       { title: "Using Secrets", href: "/create/secrets" },
       { title: "Using Git Repos", href: "/create/repos" },
