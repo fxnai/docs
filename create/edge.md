@@ -18,7 +18,7 @@ def predict (radius: float) -> float:
     """
     Compute the area of a circle given its radius.
     """
-    return pi * pow(radius, 2.)
+    return pi * radius ** 2
 ```
 
 Now, we can provision the predictor on Function in order to run it on any device, fully locally:
@@ -29,12 +29,16 @@ fxn create @username/area predictor.ipynb --edge --overwrite
 
 {% callout %} Make sure to replace `@username` with your Function username. {% /callout %}
 
-{% callout %} The `--edge` flag creates an edge predictor on Function instead of a cloud predictor. {% /callout %}
+{% callout %} The `--edge` flag creates an edge predictor instead of a cloud predictor. {% /callout %}
 
 {% callout %} There is absolutely no difference in your code when making a prediction with an edge predictor vs. a cloud predictor. Our client libraries will handle all the details for you. {% /callout %}
 
 ## Current Limitations
-*INCOMPLETE*
+Edge predictors are currently in alpha. As such, there are major limitations compared to cloud predictors:
+
+1. Only a very limited subset of Python is supported. We will be expanding support for more Python language features over time. [See GitHub](https://github.com/orgs/fxnai/projects/1/views/1)
+
+2. For security, all file I/O is restricted. Predictors must only operate on data explicitly passed in as an argument.
 
 ## Technical Considerations
 At its core, Function is a Python compiler and optimizer. Given a Python function, we transpile the function to C++ then cross-compile for the following platforms:
