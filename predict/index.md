@@ -33,11 +33,11 @@ fxn = Function(access_key="<ACCESS KEY>")
 {% callout %} If you don't provide an `access_key` to the Function client, the `FXN_ACCESS_KEY` environment variable will be used. {% /callout %}
 
 ## Making Predictions
-First, we'll need a predictor to make predictions with. You can either use a public predictor on Function, or make your own. In this guide, we'll be using the `@samplefxn/greeting` predictor:
+First, we'll need a predictor to make predictions with. You can either use a public predictor on Function, or make your own. In this guide, we'll be using the `@samples/greeting` predictor:
 
 {% quick-links %}
 {% quick-link title="Explore Predictors" icon="/icon.png" newTab=true href="https://fxn.ai/explore" description="You can discover and use public predictors on Function." /%}
-{% quick-link title="@samplefxn/greeting" icon="/icon.png" newTab=true href="https://fxn.ai/@samplefxn/greeting" description="We'll be using the greeting predictor in this guide." /%}
+{% quick-link title="@samples/greeting" icon="/icon.png" newTab=true href="https://fxn.ai/@samples/greeting" description="We'll be using the greeting predictor in this guide." /%}
 {% /quick-links %}
 
 The predictor accepts a `name` of the person to greet, optionally with their `age` and `city`. Let's make the prediction:
@@ -45,10 +45,12 @@ The predictor accepts a `name` of the person to greet, optionally with their `ag
 ```py {% framework="python" %}
 # Predict
 prediction = fxn.predictions.create(
-    tag="@samplefxn/greeting",
-    name="Rhea",
-    age=44,
-    city="Los Angeles"
+    tag="@samples/greeting",
+    inputs={
+        "name": "Rhea",
+        "age": 44,
+        "city": "Los Angeles"
+    }
 )
 # Print
 print(prediction.results[0])

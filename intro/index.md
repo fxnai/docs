@@ -1,12 +1,12 @@
 ---
 title: Welcome to Function
 pageTitle: Function Docs
-description: Run AI prediction functions on mobile, web, and in the cloud.
+description: Run Python functions on mobile, web, and in the cloud.
 ---
 
-Run AI prediction functions on mobile, web, and in the cloud. {% .text-2xl .text-gray-500 .font-normal %}
+Run Python functions on mobile, web, and in the cloud. {% .text-2xl .text-gray-500 .font-normal %}
 
-Bring a Jupyter notebook with a `predict` function, and we'll spin up a serverless AI prediction service that can scale up to serve millions of customers, and scale down to zero when idle.
+Bring a Jupyter notebook with a `predict` function, and we'll compile the function to run either on-device or server-side.
 
 ## Installing Function
 Function provides clients for Python, JavaScript, Unity Engine, and the command line interface (CLI):
@@ -34,7 +34,7 @@ npm install fxnjs
     }
   ],
   "dependencies": {
-    "ai.fxn.fxn3d": "0.0.3"
+    "ai.fxn.fxn3d": "0.0.11"
   }
 }
 ```
@@ -55,16 +55,25 @@ Function also provides Discord and Slack bots to make predictions right in your 
 
 {% callout %} We have iOS (Swift) and Android (Java/Kotlin) clients coming soon! {% /callout %}
 
+## Logging in to Functon
+After installing the Function CLI (see above), head over to [fxn.ai](https://fxn.ai/settings/developer) to create an access key:
+
+![generate access key](https://raw.githubusercontent.com/fxnai/.github/main/access_key.gif)
+
+Next, login to Function CLI with your access key:
+
+```bash {% framework="cli" %}
+# Open a terminal and run the following command
+fxn auth login <ACCESS KEY>
+```
+
+
 ## Making a Prediction
-Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samplefxn/stable-diffusion) model which generates an image based on a text prompt:
-
-1. Make sure you have installed the Function CLI (see above).
-
-2. Open a terminal and run the following command:
+Now let's make a prediction with the [Stable Diffusion](https://fxn.ai/@samples/stable-diffusion) model which generates an image based on a text prompt. Run the following command:
 
 ```bash
 # Generate an image from a text prompt using Stable Diffusion
-fxn predict @samplefxn/stable-diffusion --prompt "An astronaut riding a horse on mars"
+fxn predict @samples/stable-diffusion --prompt "An astronaut riding a horse on mars"
 ```
 
 ![predict](https://raw.githubusercontent.com/fxnai/.github/main/predict.gif)
