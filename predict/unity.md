@@ -23,7 +23,7 @@ Open a blank Unity project, then open the `Packages/manifest.json` file and add 
     }
   ],
   "dependencies": {
-    "ai.fxn.fxn3d": "0.0.3",
+    "ai.fxn.fxn3d": "0.0.22",
     ...
   }
 }
@@ -44,29 +44,28 @@ Next, head over to Unity and open 'Project Settings'. Open the 'Function' tab on
 Let's create a `Predictor.cs` script to make a prediction:
 ```csharp
 using UnityEngine;
-using UnityEngine.UI;
 using Function;
 using Function.Types;
 
-public class Predictor : MonoBehaviour {
+public class Predict : MonoBehaviour {
 
     [TextArea]
     public string prompt;
-    public RawImage uiPanel;
+    public UnityEngine.UI.RawImage uiPanel;
 
     async void Start () {
         // Create Function client
         var fxn = FunctionUnity.Create();
         // Make a prediction
         var prediction = await fxn.Predictions.Create(
-            tag: "@samplefxn/stable-diffusion",
+            tag: "@samples/stable-diffusion",
             inputs: new () { ["prompt"] = prompt }
-        ) as CloudPrediction;
+        );
         // Get the result image as a texture
-        var result = prediction.results[0] as Value;
-        var resultTexture = await result.ToTexture();
+        var image = (Image)prediction.results[0];
+        var texture = image.ToTexture();
         // Display the result
-        uiPanel.texture = resultTexture;
+        uiPanel.texture = texture;
     }
 }
 ```
